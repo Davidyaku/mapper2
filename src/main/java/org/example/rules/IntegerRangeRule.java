@@ -3,6 +3,9 @@ package org.example.rules;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Validates an {@link Integer} value and enforces a minimum and maximum bound.
+ */
 public class IntegerRangeRule extends Rule<Integer> {
     private final int minValue;
     private final int maxValue;

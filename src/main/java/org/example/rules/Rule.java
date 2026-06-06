@@ -7,6 +7,11 @@ import lombok.Setter;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Base abstraction for a rule that can read a value and apply a transformation.
+ *
+ * @param <T> the type of value being validated or transformed
+ */
 @Getter
 @Setter
 @AllArgsConstructor

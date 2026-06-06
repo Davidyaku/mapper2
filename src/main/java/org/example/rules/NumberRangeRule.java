@@ -3,6 +3,9 @@ package org.example.rules;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Validates a numeric value and enforces a minimum and maximum bound.
+ */
 public class NumberRangeRule extends Rule<Number> {
     private final double minValue;
     private final double maxValue;

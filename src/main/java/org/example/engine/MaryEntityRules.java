@@ -6,9 +6,12 @@ import org.example.rules.*;
 
 import java.util.List;
 
+/**
+ * Builds the list of validation rules to apply for a {@link MaryEntity}.
+ */
 @UtilityClass
 public final class MaryEntityRules {
-    public static List<Rule> rules(MaryEntity maryEntity) {
+    public static List<Rule<?>> rules(MaryEntity maryEntity) {
         return List.of(
                 new IntegerRangeRule(maryEntity::getInteger, maryEntity::setInteger, 3, 100),
                 new StringLengthRule(maryEntity::getString, maryEntity::setString, 0, 2),

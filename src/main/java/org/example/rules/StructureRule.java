@@ -5,6 +5,9 @@ import org.example.entities.Structure;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Validates a {@link Structure} object and its name length.
+ */
 public class StructureRule extends Rule<Structure> {
     private static final int NAME_MIN_LENGTH = 3;
     private static final int NAME_MAX_LENGTH = 20;

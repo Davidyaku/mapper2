@@ -3,6 +3,9 @@ package org.example.rules;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Validates a string's length and truncates or clears it when it is out of range.
+ */
 public class StringLengthRule extends Rule<String> {
     private final int minLength;
     private final int maxLength;

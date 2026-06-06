@@ -11,6 +11,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * Maps database entities into Mary entities and applies post-mapping rules.
+ */
 @Mapper(builder = @Builder(disableBuilder = true))
 public interface DBEntityMapper {
     @Mapping(source = "ALong", target = "aLong")

@@ -3,6 +3,9 @@ package org.example.rules;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Validates a {@link Long} value and enforces a minimum and maximum bound.
+ */
 public class LongRangeRule extends Rule<Long> {
     private final long minValue;
     private final long maxValue;

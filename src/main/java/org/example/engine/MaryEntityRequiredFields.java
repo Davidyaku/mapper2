@@ -5,6 +5,9 @@ import org.example.entities.MaryEntity;
 
 import java.util.List;
 
+/**
+ * Holds the required-field configuration for {@link MaryEntity}.
+ */
 @UtilityClass
 public final class MaryEntityRequiredFields {
     public static List<RequiredField<MaryEntity, ?>> list() {

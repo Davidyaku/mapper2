@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * Produces mock database entities for testing and demonstration.
+ */
 @UtilityClass
 public class DBMock {
     public static List<DBEntity> getAllEntities() {
