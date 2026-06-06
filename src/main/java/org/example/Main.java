@@ -3,6 +3,8 @@ package org.example;
 import org.example.database.DBMock;
 import org.example.entities.DBEntity;
 import org.example.entities.MaryEntity;
+import org.example.engine.MaryEntityRequiredFields;
+import org.example.engine.RequiredFieldValidator;
 import org.example.mapper.DBEntityMapper;
 
 import java.util.List;
@@ -20,9 +22,10 @@ public class Main {
 
         List<MaryEntity> maryEntities = dbEntities.stream()
                 .map(DBEntityMapper.INSTANCE::toMaryEntity)
+                .filter(RequiredFieldValidator.filterByRequiredFieldsAndLog(MaryEntityRequiredFields.list()))
                 .collect(Collectors.toList());
 
-        System.out.println("AFTER");
+        System.out.println("AFTER FILTERING REQUIRED FIELDS");
         System.out.println("------------------------------------------");
         System.out.println(maryEntities.size() + " Entities");
         System.out.println(maryEntities);

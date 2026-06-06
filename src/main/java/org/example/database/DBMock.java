@@ -12,18 +12,41 @@ import java.util.Random;
 @UtilityClass
 public class DBMock {
     public static List<DBEntity> getAllEntities() {
-        return List.of(createEntity(), createEntity(), createEntity());
+        return List.of(
+                createEntity(),
+                createEntityWithNullRequiredFields(),
+                createEntityWithNullInteger(),
+                createEntityWithNullString()
+        );
     }
 
     private static DBEntity createEntity() {
         Random random = new Random();
+        return createEntity(random, false, false);
+    }
 
+    private static DBEntity createEntityWithNullRequiredFields() {
+        Random random = new Random();
+        return createEntity(random, true, true);
+    }
+
+    private static DBEntity createEntityWithNullInteger() {
+        Random random = new Random();
+        return createEntity(random, true, false);
+    }
+
+    private static DBEntity createEntityWithNullString() {
+        Random random = new Random();
+        return createEntity(random, false, true);
+    }
+
+    private static DBEntity createEntity(Random random, boolean nullInteger, boolean nullString) {
         return DBEntity.builder()
-                .integer(random.nextInt())
+                .integer(nullInteger ? null : random.nextInt())
                 .aLong(random.nextLong())
                 .number(random.nextInt())
                 .structure(getStructure(random))
-                .string(Objects.toString(random.nextInt()))
+                .string(nullString ? null : Objects.toString(random.nextInt()))
                 .build();
     }
 
